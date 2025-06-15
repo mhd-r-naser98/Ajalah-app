@@ -20,7 +20,7 @@ class AppBottomNavBar extends StatelessWidget {
     final t = context.t;
 
     return Container(
-      padding: const EdgeInsets.only(left: 12, right: 12, top: 0, bottom: 18),
+      padding: const EdgeInsets.only(left: 12, right: 12, top: 0, bottom: 0),
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.vertical(top: Radius.circular(radius)),
