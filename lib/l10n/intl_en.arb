@@ -1,0 +1,63 @@
+{
+  "@@locale": "en",
+  "login": "Login",
+  "@login": {
+    "description": "Login button label"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label for email input field"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Label for password input field"
+  },
+  "enterEmail": "Please enter your email",
+  "@enterEmail": {
+    "description": "Validation message shown when email field is empty"
+  },
+  "invalidEmail": "Invalid email format",
+  "@invalidEmail": {
+    "description": "Validation message shown when the email format is invalid"
+  },
+  "enterPassword": "Please enter your password",
+  "@enterPassword": {
+    "description": "Validation message shown when password field is empty"
+  },
+  "shortPassword": "Password must be at least 6 characters",
+  "@shortPassword": {
+    "description": "Validation message shown when password is too short"
+  },
+  "dontHaveAccount": "Don't have an account? Register",
+  "@dontHaveAccount": {
+    "description": "Prompt shown below login form to redirect users to register"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register button label"
+  },
+  "enterName": "Please enter your name",
+  "@enterName": {
+    "description": "Validation message shown when name field is empty"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Label for name input field"
+  },
+  "alreadyHaveAccount": "Already have an account? Login",
+  "@alreadyHaveAccount": {
+    "description": "Prompt shown below register form to redirect users to login"
+  },
+  "registeredSuccessfully": "Registered successfully! Please login.",
+  "@registeredSuccessfully": {
+    "description": "Message shown when registration is successful"
+  },
+  "homeTitle": "Available Cars",
+  "@homeTitle": {
+    "description": "Title shown on the home screen listing cars"
+  },
+  "clickToBuy": "Tap to buy this car",
+  "@clickToBuy": {
+    "description": "Label for a button or prompt to buy a car"
+  }
+}

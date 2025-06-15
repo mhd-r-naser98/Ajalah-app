@@ -1,0 +1,63 @@
+{
+  "@@locale": "ar",
+  "login": "تسجيل الدخول",
+  "@login": {
+    "description": "زر تسجيل الدخول"
+  },
+  "email": "البريد الإلكتروني",
+  "@email": {
+    "description": "تسمية حقل إدخال البريد الإلكتروني"
+  },
+  "password": "كلمة المرور",
+  "@password": {
+    "description": "تسمية حقل إدخال كلمة المرور"
+  },
+  "enterEmail": "يرجى إدخال البريد الإلكتروني",
+  "@enterEmail": {
+    "description": "رسالة تحقق تظهر عند ترك حقل البريد الإلكتروني فارغاً"
+  },
+  "invalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+  "@invalidEmail": {
+    "description": "رسالة تحقق تظهر عند إدخال بريد إلكتروني بصيغة غير صحيحة"
+  },
+  "enterPassword": "يرجى إدخال كلمة المرور",
+  "@enterPassword": {
+    "description": "رسالة تحقق تظهر عند ترك حقل كلمة المرور فارغاً"
+  },
+  "shortPassword": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+  "@shortPassword": {
+    "description": "رسالة تحقق تظهر عند إدخال كلمة مرور قصيرة جداً"
+  },
+  "dontHaveAccount": "لا تملك حساب؟ قم بالتسجيل",
+  "@dontHaveAccount": {
+    "description": "عبارة تظهر تحت نموذج تسجيل الدخول لتشجيع المستخدم على التسجيل"
+  },
+  "register": "تسجيل",
+  "@register": {
+    "description": "زر التسجيل"
+  },
+  "enterName": "يرجى إدخال الاسم",
+  "@enterName": {
+    "description": "رسالة تحقق تظهر عند ترك حقل الاسم فارغاً"
+  },
+  "name": "الاسم",
+  "@name": {
+    "description": "تسمية حقل إدخال الاسم"
+  },
+  "alreadyHaveAccount": "هل لديك حساب؟ قم بتسجيل الدخول",
+  "@alreadyHaveAccount": {
+    "description": "عبارة تظهر تحت نموذج التسجيل لتشجيع المستخدم على تسجيل الدخول"
+  },
+  "registeredSuccessfully": "تم التسجيل بنجاح! يرجى تسجيل الدخول.",
+  "@registeredSuccessfully": {
+    "description": "رسالة تظهر عند إتمام عملية التسجيل بنجاح"
+  },
+  "homeTitle": "السيارات المتاحة",
+  "@homeTitle": {
+    "description": "عنوان الصفحة الرئيسية التي تعرض السيارات"
+  },
+  "clickToBuy": "انقر لشراء هذه السيارة",
+  "@clickToBuy": {
+    "description": "نص زر أو عبارة تشجيعية لشراء السيارة"
+  }
+}
