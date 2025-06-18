@@ -21,7 +21,7 @@ class ForgotScreen extends StatelessWidget {
         listener: (context, state) {
           if (state is ForgotSuccess) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              AppSnackBar.success(context, 'تمت العملية بنجاح');
+              AppSnackBar.success(context, 'SuccessfullyCompleted');
             });
           } else if (state is ForgotFailure) {
             WidgetsBinding.instance.addPostFrameCallback((_) {

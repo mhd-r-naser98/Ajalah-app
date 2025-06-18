@@ -31,18 +31,19 @@ class _StepTwoState extends State<StepTwo> {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<ConfirmCubit>();
+    final t = context.t;
 
     return ReactiveForm(
       formGroup: form,
       child: Column(
         children: [
           Text(
-            'Phone Number Verification',
+            t('PhoneVerification'),
             style: context.textStyles.styles.headlineMedium,
           ),
           const ResponsiveSpacer(size: SpacerSize.small),
           Text(
-            'Enter OTP sent to: ${widget.phone}',
+            '${t('EnterOTP')} ${widget.phone}',
             style: context.textStyles.styles.labelLarge,
           ),
           const ResponsiveSpacer(size: SpacerSize.xLarge),
@@ -50,7 +51,7 @@ class _StepTwoState extends State<StepTwo> {
 
           const ResponsiveSpacer(size: SpacerSize.large),
           CustomButton(
-            text: 'Continue',
+            text: t('Continue'),
             onTap: () {
               setState(() {
                 submitted = true;
@@ -75,7 +76,7 @@ class _StepTwoState extends State<StepTwo> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Didn’t get the code?",
+                      t('DidnCode'),
                       style: context.textStyles.styles.labelMedium,
                     ),
                     const ResponsiveSpacer(
@@ -83,16 +84,16 @@ class _StepTwoState extends State<StepTwo> {
                       size: SpacerSize.xSmall,
                     ),
                     CustomLinkText(
-                      text: "Resend",
+                      text: t("Resend"),
                       onTap: () async {
                         if (widget.phone.isNotEmpty) {
                           cubit.resendCode(widget.phone);
-                          AppSnackBar.success(context, 'Sent');
-                        } else {
-                          AppSnackBar.error(
+                          AppSnackBar.success(
                             context,
-                            'There is no phone number',
+                            t('SuccessfullyCompleted'),
                           );
+                        } else {
+                          AppSnackBar.error(context, t('NoNumber'));
                         }
                       },
 

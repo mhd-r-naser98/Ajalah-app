@@ -5,7 +5,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_ajalah/app/router.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/config/router.dart' as AppRoutes;
+import 'package:new_ajalah/core/config/router.dart';
 import 'package:new_ajalah/core/di/service_locator.dart';
 import 'package:new_ajalah/core/services/storage_service.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';

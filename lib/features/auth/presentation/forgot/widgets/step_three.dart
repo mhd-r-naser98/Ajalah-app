@@ -47,14 +47,14 @@ class _StepThreeState extends State<StepThree> {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<ForgotCubit>();
-
+    final t = context.t;
     return ReactiveForm(
       formGroup: form,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Reset Password',
+            t('ResetPassword'),
             style: context.textStyles.styles.headlineMedium,
           ),
 
@@ -62,8 +62,11 @@ class _StepThreeState extends State<StepThree> {
           AppTextField(
             config: AppFormFieldConfig(
               name: 'password',
-              label: 'Password*',
+              label: t('password'),
+
               obscureText: true,
+              forceLTR: true,
+
               hintText: '************',
               onChanged: (value) {
                 passwordNotifier.value = value ?? '';
@@ -82,10 +85,12 @@ class _StepThreeState extends State<StepThree> {
           ),
           const ResponsiveSpacer(size: SpacerSize.large),
           AppTextField(
-            config: const AppFormFieldConfig(
+            config: AppFormFieldConfig(
               name: 'confirmPassword',
-              label: 'Confirm Password*',
+              label: t('ConfirmPassword'),
               obscureText: true,
+              forceLTR: true,
+
               hintText: '************',
             ),
             showErrors: submitted,
@@ -93,7 +98,7 @@ class _StepThreeState extends State<StepThree> {
 
           const ResponsiveSpacer(size: SpacerSize.medium),
           CustomButton(
-            text: 'Reset Password',
+            text: t('ResetPassword'),
             onTap: () {
               setState(() {
                 submitted = true;

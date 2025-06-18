@@ -79,10 +79,17 @@ class CustomButtonWithIcon extends StatelessWidget {
 }
 
 class CustomButton extends StatefulWidget {
-  const CustomButton({super.key, this.text = 'Next', this.onTap});
-
   final String text;
+  final TextStyle? textStyle;
+  final double? height;
   final VoidCallback? onTap;
+  const CustomButton({
+    super.key,
+    this.text = 'Next',
+    this.onTap,
+    this.height,
+    this.textStyle,
+  });
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -144,7 +151,7 @@ class _CustomButtonState extends State<CustomButton> {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 120),
             curve: Curves.easeOut,
-            height: 50,
+            height: widget.height ?? 50,
             width: SizeConfig.screenWidth,
             decoration: BoxDecoration(
               color: backgroundColor,
@@ -154,11 +161,13 @@ class _CustomButtonState extends State<CustomButton> {
             child: Center(
               child: Text(
                 widget.text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
+                style:
+                    widget.textStyle ??
+                    const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
               ),
             ),
           ),

@@ -29,18 +29,21 @@ class _StepOneState extends State<StepOne> {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
     return ReactiveForm(
       formGroup: form,
       child: Column(
         children: [
           Text(
-            'Reset Password',
+            t('ResetPassword'),
             style: context.textStyles.styles.headlineMedium,
           ),
+          const ResponsiveSpacer(size: SpacerSize.medium),
+
           AppPhoneField(
-            config: const AppFormFieldConfig(
+            config: AppFormFieldConfig(
               name: 'phone',
-              label: 'Phone*',
+              label: t('phone'),
               hintText: '',
               keyboardType: TextInputType.phone,
             ),
@@ -48,7 +51,7 @@ class _StepOneState extends State<StepOne> {
           ),
           const ResponsiveSpacer(size: SpacerSize.medium),
           CustomButton(
-            text: 'Send Verification Code',
+            text: t('SendCode'),
             onTap: () {
               setState(() {
                 submitted = true;

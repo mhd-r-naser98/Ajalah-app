@@ -6,18 +6,21 @@ class AppCardButton extends StatelessWidget {
   final String label;
   final IconData icon;
   final VoidCallback onTap;
+  final bool isLoading;
 
   const AppCardButton({
     super.key,
     required this.label,
     required this.icon,
     required this.onTap,
+    this.isLoading = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final colors = context.colors;
     final radius = context.radius;
+    final style = context.textStyles.styles;
 
     return SizedBox(
       child: InkWell(
@@ -38,18 +41,32 @@ class AppCardButton extends StatelessWidget {
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: isLoading
+                ? MainAxisAlignment.center
+                : MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                label,
-                style: Theme.of(context).textTheme.bodyMedium,
-                textAlign: TextAlign.center,
-              ),
-              const ResponsiveSpacer(
-                axis: Axis.horizontal,
-                size: SpacerSize.small,
-              ),
-              Icon(icon, color: colors.primary.main),
+              if (isLoading) ...[
+                const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+              ] else ...[
+                Expanded(
+                  child: Text(
+                    label,
+                    style: style.bodyMedium,
+                    textAlign: TextAlign.start,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ),
+                const ResponsiveSpacer(
+                  axis: Axis.horizontal,
+                  size: SpacerSize.small,
+                ),
+                Icon(icon, color: colors.primary.main),
+              ],
             ],
           ),
         ),

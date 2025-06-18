@@ -36,6 +36,7 @@ class AppBottomNavBar extends StatelessWidget {
         top: false,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _NavItem(
               asset: 'assets/imgs/home.svg',
@@ -143,7 +144,7 @@ class _NavItemState extends State<_NavItem>
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const ResponsiveSpacer(size: SpacerSize.medium),
+                // const ResponsiveSpacer(size: SpacerSize.medium),
                 SvgPicture.asset(
                   widget.asset,
                   height: 24,

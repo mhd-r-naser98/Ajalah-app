@@ -114,12 +114,12 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
   static final light = AppTextStyles(
     styles: TextStyleGroup(
       displayLarge: _style(fontSize: 57),
-      displayMedium: _style(fontSize: 45),
+      displayMedium: _style(fontSize: 40),
       displaySmall: _style(fontSize: 36, weight: FontWeight.bold),
       headlineLarge: _style(fontSize: 32, weight: FontWeight.bold),
       headlineMedium: _style(fontSize: 30, weight: FontWeight.w700),
       headlineSmall: _style(fontSize: 28, weight: FontWeight.w700),
-      titleLarge: _style(fontSize: 24, weight: FontWeight.bold),
+      titleLarge: _style(fontSize: 24),
       titleMedium: _style(fontSize: 20, weight: FontWeight.w700),
       titleSmall: _style(fontSize: 18, weight: FontWeight.w500),
       bodyLarge: _style(fontSize: 16),
@@ -137,7 +137,7 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
   static final dark = AppTextStyles(
     styles: TextStyleGroup(
       displayLarge: _style(fontSize: 57, color: Colors.white),
-      displayMedium: _style(fontSize: 45, color: Colors.white),
+      displayMedium: _style(fontSize: 40, color: Colors.white),
       displaySmall: _style(
         fontSize: 36,
         weight: FontWeight.bold,
@@ -184,4 +184,8 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
       linkSmall: _style(fontSize: 12, color: _accentColor),
     ),
   );
+
+  get titleLarge => null;
+
+  get displayLarge => null;
 }

@@ -10,6 +10,7 @@ class PasswordRequirements extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,13 +29,13 @@ class PasswordRequirements extends StatelessWidget {
             ),
 
             Text(
-              'Password Strength: ',
+              '${t('PasswordStrength')}: ',
               style: context.textStyles.styles.labelMedium.copyWith(
                 color: context.colors.grey[600]!,
               ),
             ),
             Text(
-              password.strengthLabel,
+              t(password.strengthLabel),
               style: context.textStyles.styles.labelMedium.copyWith(
                 color: password.strengthColor,
               ),
@@ -43,25 +44,13 @@ class PasswordRequirements extends StatelessWidget {
         ),
         const ResponsiveSpacer(size: SpacerSize.medium),
 
-        _buildRequirement(
-          context,
-          password.hasMinLength,
-          'At least 8 characters',
-        ),
+        _buildRequirement(context, password.hasMinLength, t('shortPassword')),
         const ResponsiveSpacer(size: SpacerSize.medium),
 
-        _buildRequirement(
-          context,
-          password.hasSymbol,
-          'Contains a number or symbol',
-        ),
+        _buildRequirement(context, password.hasSymbol, t('passwordComplexity')),
         const ResponsiveSpacer(size: SpacerSize.medium),
 
-        _buildRequirement(
-          context,
-          password.isNotCommon,
-          'Cannot be "password" or "123"',
-        ),
+        _buildRequirement(context, password.isNotCommon, t('PassBe')),
       ],
     );
   }

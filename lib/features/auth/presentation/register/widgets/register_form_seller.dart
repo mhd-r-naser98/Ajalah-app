@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 // ignore: library_prefixes
-import 'package:new_ajalah/core/config/router.dart' as AppRoutes;
+import 'package:new_ajalah/core/config/router.dart';
 import 'package:new_ajalah/core/forms/app_form_field_config.dart';
 import 'package:new_ajalah/core/forms/form_validation_messages.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
@@ -92,12 +92,12 @@ class _RegisterFormSellerState extends State<RegisterFormSeller> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (MediaQuery.of(context).orientation ==
-                  Orientation.landscape) ...[
-                const ResponsiveSpacer(size: SpacerSize.xLarge),
+              // if (MediaQuery.of(context).orientation ==
+              //     Orientation.landscape) ...[
+              //   const ResponsiveSpacer(size: SpacerSize.xLarge),
 
-                const ResponsiveSpacer(size: SpacerSize.medium),
-              ],
+              //   const ResponsiveSpacer(size: SpacerSize.medium),
+              // ],
               Text(
                 t('register'),
                 style: context.textStyles.styles.headlineMedium,
@@ -125,7 +125,7 @@ class _RegisterFormSellerState extends State<RegisterFormSeller> {
                     child: AppTextField(
                       config: AppFormFieldConfig(
                         name: 'lName',
-                        label: t('LasttName'),
+                        label: t('LastName'),
                         hintText: t('lNameHolder'),
                       ),
                       showErrors: submitted,
@@ -148,6 +148,8 @@ class _RegisterFormSellerState extends State<RegisterFormSeller> {
                         name: 'password',
                         label: t('password'),
                         obscureText: true,
+                        forceLTR: true,
+
                         hintText: '********',
                       ),
                       showErrors: submitted,
@@ -162,6 +164,8 @@ class _RegisterFormSellerState extends State<RegisterFormSeller> {
                       config: AppFormFieldConfig(
                         name: 'confirmPassword',
                         label: t('ConfirmPassword'),
+                        forceLTR: true,
+
                         obscureText: true,
                         hintText: '********',
                       ),
@@ -188,6 +192,7 @@ class _RegisterFormSellerState extends State<RegisterFormSeller> {
                         name: 'email',
                         label: t('email'),
                         hintText: 'Info.dot@',
+                        forceLTR: true,
                       ),
                       showErrors: submitted,
                     ),
@@ -232,7 +237,7 @@ class _RegisterFormSellerState extends State<RegisterFormSeller> {
                         DropdownMenuItem(value: 'Homs', child: Text(t('Homs'))),
                         DropdownMenuItem(
                           value: 'Latakia',
-                          child: Text('Latakia'),
+                          child: Text(t('Latakia')),
                         ),
                         DropdownMenuItem(
                           value: 'Daraa',

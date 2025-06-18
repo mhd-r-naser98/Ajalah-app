@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:new_ajalah/shared/widgets/app_nav_bar.dart';
 // ignore: library_prefixes
-import '../../../core/config/router.dart' as AppRoutes;
+import '../../../core/config/router.dart';
 
 class HomeShellScreen extends StatelessWidget {
   final Widget child;

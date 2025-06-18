@@ -16,6 +16,7 @@ class AppFormFieldConfig {
   final Color? fillColor;
   final bool filled;
   final void Function(String?)? onChanged;
+  final bool? forceLTR;
 
   const AppFormFieldConfig({
     required this.name,
@@ -33,5 +34,6 @@ class AppFormFieldConfig {
     this.fillColor,
     this.filled = false,
     this.initialCountryCode,
+    this.forceLTR = false,
   });
 }

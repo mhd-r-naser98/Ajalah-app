@@ -48,113 +48,114 @@ class _AppPhoneFieldState extends State<AppPhoneField> {
                   formControlName: config.name,
 
                   builder: (context, valueControl, child) {
-                    return InternationalPhoneNumberInput(
-                      initialValue:
-                          valueControl.value ??
-                          PhoneNumber(isoCode: _initialIsoCode),
-                      selectorTextStyle: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: context.colors.text,
-                      ),
-                      textStyle: TextStyle(
-                        fontSize: 14,
-                        color: context.colors.text,
-                      ),
-
-                      searchBoxDecoration: InputDecoration(
-                        hintText: t("Choose"),
-                        hintStyle: TextStyle(
+                    return Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: InternationalPhoneNumberInput(
+                        initialValue:
+                            valueControl.value ??
+                            PhoneNumber(isoCode: _initialIsoCode),
+                        selectorTextStyle: TextStyle(
                           fontSize: 14,
-                          color: context.colors.grey[700]!,
+                          fontWeight: FontWeight.w400,
+                          color: context.colors.text,
                         ),
-
-                        filled: true,
-                        fillColor: Colors.transparent,
-                        isDense: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            context.radius.md,
-                          ),
-                          borderSide: BorderSide(
-                            color: context.colors.grey[250]!,
-                            width: 2.0,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            context.radius.md,
-                          ),
-                          borderSide: BorderSide(
-                            color: context.colors.grey[250]!,
-                            width: 2.0,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            context.radius.md,
-                          ),
-                          borderSide: BorderSide(
-                            color: context.colors.primary.main,
-                            width: 2.0,
-                          ),
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 12,
-                          horizontal: 16,
-                        ),
-                      ),
-                      onInputChanged: (PhoneNumber number) {
-                        valueControl.updateValue(number);
-                      },
-                      selectorConfig: const SelectorConfig(
-                        selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                        leadingPadding: 6,
-                        trailingSpace: false,
-                        useEmoji: true,
-                        setSelectorButtonAsPrefixIcon: true,
-                      ),
-                      formatInput: true,
-                      inputDecoration: InputDecoration(
-                        hintText: config.hintText,
-                        hintStyle: TextStyle(
+                        textStyle: TextStyle(
                           fontSize: 14,
-                          color: context.colors.grey[700]!,
+                          color: context.colors.text,
                         ),
-                        filled: true,
-                        fillColor: Colors.transparent,
-                        isDense: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            context.radius.md,
+                        searchBoxDecoration: InputDecoration(
+                          hintText: t("Choose"),
+                          hintStyle: TextStyle(
+                            fontSize: 14,
+                            color: context.colors.grey[700]!,
                           ),
-                          borderSide: BorderSide(
-                            color: hasError
-                                ? context.colors.error.main
-                                : context.colors.grey[250]!,
-                            width: 2.0,
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          isDense: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              context.radius.md,
+                            ),
+                            borderSide: BorderSide(
+                              color: context.colors.grey[250]!,
+                              width: 2.0,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              context.radius.md,
+                            ),
+                            borderSide: BorderSide(
+                              color: context.colors.grey[250]!,
+                              width: 2.0,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              context.radius.md,
+                            ),
+                            borderSide: BorderSide(
+                              color: context.colors.primary.main,
+                              width: 2.0,
+                            ),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 16,
                           ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            context.radius.md,
-                          ),
-                          borderSide: BorderSide(
-                            color: hasError
-                                ? context.colors.error.main
-                                : context.colors.grey[250]!,
-                            width: 2.0,
-                          ),
+                        onInputChanged: (PhoneNumber number) {
+                          valueControl.updateValue(number);
+                        },
+                        selectorConfig: const SelectorConfig(
+                          selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                          leadingPadding: 6,
+                          trailingSpace: false,
+                          useEmoji: true,
+                          setSelectorButtonAsPrefixIcon: true,
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(
-                            context.radius.md,
+                        formatInput: true,
+                        inputDecoration: InputDecoration(
+                          hintText: config.hintText,
+                          hintStyle: TextStyle(
+                            fontSize: 14,
+                            color: context.colors.grey[700]!,
                           ),
-                          borderSide: BorderSide(
-                            color: hasError
-                                ? context.colors.error.main
-                                : context.colors.primary.main,
-                            width: 2.0,
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          isDense: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              context.radius.md,
+                            ),
+                            borderSide: BorderSide(
+                              color: hasError
+                                  ? context.colors.error.main
+                                  : context.colors.grey[250]!,
+                              width: 2.0,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              context.radius.md,
+                            ),
+                            borderSide: BorderSide(
+                              color: hasError
+                                  ? context.colors.error.main
+                                  : context.colors.grey[250]!,
+                              width: 2.0,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              context.radius.md,
+                            ),
+                            borderSide: BorderSide(
+                              color: hasError
+                                  ? context.colors.error.main
+                                  : context.colors.primary.main,
+                              width: 2.0,
+                            ),
                           ),
                         ),
                       ),

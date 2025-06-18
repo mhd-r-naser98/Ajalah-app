@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 // ignore: library_prefixes
-import 'package:new_ajalah/core/config/router.dart' as AppRoutes;
+import 'package:new_ajalah/core/config/router.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
 import 'package:new_ajalah/features/auth/presentation/login/logic/state/login_state.dart';

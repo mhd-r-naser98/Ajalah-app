@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
 extension PasswordStrengthExtension on String {
+  bool get isComplexPassword {
+    final password = this;
+
+    final hasUppercase = RegExp(r'[A-Z]').hasMatch(password);
+    final hasLowercase = RegExp(r'[a-z]').hasMatch(password);
+    final hasNumber = RegExp(r'[0-9]').hasMatch(password);
+    final hasSpecialChar = RegExp(
+      r'[!@#\$%^&*(),.?":{}|<>]',
+    ).hasMatch(password);
+
+    return hasUppercase && hasLowercase && hasNumber && hasSpecialChar;
+  }
+
   bool isStrong() {
     return strengthScore == 3;
   }
@@ -9,7 +22,7 @@ extension PasswordStrengthExtension on String {
     int score = 0;
 
     if (length >= 8) score++;
-    if (contains(RegExp(r'[0-9!@#\$%^&*(),.?":{}|<>]'))) score++;
+    if (isComplexPassword) score++;
     if (!(toLowerCase().contains('password') || contains('123'))) score++;
 
     return score;
@@ -38,7 +51,7 @@ extension PasswordStrengthExtension on String {
   }
 
   bool get hasMinLength => length >= 8;
-  bool get hasSymbol => contains(RegExp(r'[0-9!@#\$%^&*(),.?":{}|<>]'));
+  bool get hasSymbol => isComplexPassword;
   bool get isNotCommon =>
       !(toLowerCase().contains('password') || contains('123'));
 }

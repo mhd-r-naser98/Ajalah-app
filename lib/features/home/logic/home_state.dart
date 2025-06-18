@@ -11,7 +11,10 @@ class HomeInitial extends HomeState {}
 
 class HomeLoading extends HomeState {}
 
-class HomeLoaded extends HomeState {}
+class HomeLoaded extends HomeState {
+  final List<dynamic> cars;
+  const HomeLoaded({required this.cars});
+}
 
 class HomeFailure extends HomeState {
   final String error;

@@ -17,6 +17,7 @@ class AppDateField extends StatelessWidget {
   });
 
   Future<void> _pickDate(BuildContext context, AbstractControl control) async {
+    final t = context.t;
     final locale = Localizations.localeOf(context);
     final now = DateTime.now();
     final firstDate = DateTime(1900);
@@ -32,12 +33,6 @@ class AppDateField extends StatelessWidget {
       firstDate: firstDate,
       lastDate: lastDate,
       initialDate: initialDate,
-      fieldLabelText: 'fieldLabelText',
-      cancelText: 'cancelText',
-      confirmText: 'confirmText',
-      fieldHintText: 'fieldHintText',
-      helpText: 'helpText',
-      barrierLabel: 'barrierLabel',
       locale: locale,
       builder: (context, child) {
         final now = DateTime.now();
@@ -83,10 +78,10 @@ class AppDateField extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        'Choose Date',
+                        t('ChooseDate'),
 
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 20,
                           color: context.colors.secondary.contrast,
                         ),
                       ),
@@ -109,7 +104,7 @@ class AppDateField extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
-                          child: const Text('إلغاء'),
+                          child: Text(t('Cancel')),
                         ),
                         const SizedBox(width: 16),
                         ElevatedButton(
@@ -125,7 +120,7 @@ class AppDateField extends StatelessWidget {
                               ),
                             ),
                           ),
-                          child: const Text('تأكيد'),
+                          child: Text(t('Confirm')),
                         ),
                       ],
                     ),

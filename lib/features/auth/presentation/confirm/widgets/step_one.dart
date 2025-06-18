@@ -29,26 +29,29 @@ class _StepOneState extends State<StepOne> {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
     return ReactiveForm(
       formGroup: form,
       child: Column(
         children: [
           Text(
-            'Confirm Account',
+            t('ConfirmAccount'),
             style: context.textStyles.styles.headlineMedium,
           ),
           AppPhoneField(
-            config: const AppFormFieldConfig(
+            config: AppFormFieldConfig(
               name: 'phone',
-              label: 'Phone*',
+              label: t('phone'),
               hintText: '',
+              forceLTR: true,
+
               keyboardType: TextInputType.phone,
             ),
             showErrors: submitted,
           ),
           const ResponsiveSpacer(size: SpacerSize.medium),
           CustomButton(
-            text: 'Send Verification Code',
+            text: t('SendCode'),
             onTap: () {
               setState(() {
                 submitted = true;

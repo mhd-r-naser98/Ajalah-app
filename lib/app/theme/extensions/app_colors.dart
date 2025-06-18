@@ -17,6 +17,7 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color neutral;
   final Color box;
   final Color text;
+  final Color input;
 
   const AppColors({
     required this.primary,
@@ -31,6 +32,7 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.neutral,
     required this.box,
     required this.text,
+    required this.input,
   });
 
   @override
@@ -47,6 +49,7 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? neutral,
     Color? box,
     Color? text,
+    Color? input,
   }) {
     return AppColors(
       primary: primary ?? this.primary,
@@ -61,6 +64,7 @@ class AppColors extends ThemeExtension<AppColors> {
       neutral: neutral ?? this.neutral,
       box: box ?? this.box,
       text: text ?? this.text,
+      input: input ?? this.input,
     );
   }
 
@@ -80,6 +84,7 @@ class AppColors extends ThemeExtension<AppColors> {
     neutral: Color(0xFFF2F2F7),
     box: Colors.white,
     text: Color(0xFF2A3950),
+    input: Colors.red,
   );
 
   static const dark = AppColors(
@@ -95,5 +100,6 @@ class AppColors extends ThemeExtension<AppColors> {
     neutral: Color.fromRGBO(145, 158, 171, 0.12),
     box: Color(0xFF233043),
     text: Colors.white,
+    input: Colors.red,
   );
 }

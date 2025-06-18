@@ -1,25 +1,28 @@
-// ignore_for_file: library_prefixes
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:new_ajalah/core/di/service_locator.dart';
 import 'package:new_ajalah/core/services/storage_service.dart';
+import 'package:new_ajalah/features/account/dashboard/dashboard_screen.dart';
+import 'package:new_ajalah/features/account/order-tracking/order_tracking.dart';
+import 'package:new_ajalah/features/account/saved/saved_screen.dart';
 import 'package:new_ajalah/features/auth/presentation/confirm/confirm_screen.dart';
 import 'package:new_ajalah/features/auth/presentation/forgot/forgot_screen.dart';
+import 'package:new_ajalah/features/carListing/new/new_car_screen.dart';
+import 'package:new_ajalah/features/carListing/rent/rent_car_screen.dart';
+import 'package:new_ajalah/features/carListing/search-by/search_by_screen.dart';
+import 'package:new_ajalah/features/compare/compare_screen.dart';
+import 'package:new_ajalah/features/global/about/about_screen.dart';
 import 'package:new_ajalah/features/global/privacy/privacy_screen.dart';
 import 'package:new_ajalah/features/global/terms/terms_screen.dart';
 import 'package:new_ajalah/features/home/logic/home_cubit.dart';
 import 'package:new_ajalah/features/home/presentation/widgets/home_body.dart';
-import 'package:new_ajalah/features/imported/imported_screen.dart';
-import 'package:new_ajalah/features/home/presentation/sell/sell_screen.dart';
-import 'package:new_ajalah/features/home/presentation/settings/settings_screen.dart';
-import 'package:new_ajalah/features/more/presentation/more_page.dart';
-import 'package:new_ajalah/features/used/used_screen.dart';
+import 'package:new_ajalah/features/carListing/imported/imported_screen.dart';
+import 'package:new_ajalah/features/account/sell/sell_screen.dart';
+import 'package:new_ajalah/features/more/presentation/more_screen.dart';
+import 'package:new_ajalah/features/carListing/used/used_screen.dart';
 import 'package:new_ajalah/features/splash/presentation/splash_view.dart';
-// import 'package:new_ajalah/features/auth/data/auth_repo.dart';
-import '../core/config/router.dart' as AppRoutes;
+import '../core/config/router.dart';
 import '../features/auth/presentation/login/login_screen.dart';
 import '../features/auth/presentation/register/register_screen.dart';
 import '../features/home/presentation/home_screen.dart';
@@ -91,11 +94,6 @@ class AppRouter {
             builder: (context, state) => const MoreScreen(),
           ),
           GoRoute(
-            path: AppRoutes.settings,
-            name: 'settings',
-            builder: (context, state) => const SettingsScreen(),
-          ),
-          GoRoute(
             path: AppRoutes.terms,
             name: 'terms',
             builder: (context, state) => const TermsScreen(),
@@ -104,6 +102,46 @@ class AppRouter {
             path: AppRoutes.privacy,
             name: 'privacy',
             builder: (context, state) => const PrivacyScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.about,
+            name: 'about',
+            builder: (context, state) => const AboutScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.compare,
+            name: 'compare',
+            builder: (context, state) => const CompareScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.searchBy,
+            name: 'searchBy',
+            builder: (context, state) => const SearchByScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.newCars,
+            name: 'newCars',
+            builder: (context, state) => const NewCarScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.rent,
+            name: 'rent',
+            builder: (context, state) => const RentCarScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.savedCars,
+            name: 'savedCars',
+            builder: (context, state) => const SavedScreen(),
+          ),
+          GoRoute(
+            path: AppRoutes.orders,
+            name: 'orders',
+            builder: (context, state) => const OrderTracking(),
+          ),
+          GoRoute(
+            path: AppRoutes.dashboard,
+            name: 'dashboard',
+            builder: (context, state) => const DashboardScreen(),
           ),
         ],
       ),
@@ -123,7 +161,14 @@ class AppRouter {
         AppRoutes.confirm,
       ].contains(location);
 
-      if (!isLoggedIn && !loggingIn) return AppRoutes.login;
+      final account = [
+        AppRoutes.dashboard,
+        AppRoutes.orders,
+        AppRoutes.savedCars,
+        AppRoutes.sell,
+      ].contains(location);
+
+      if (!isLoggedIn && (!loggingIn || !account)) return AppRoutes.login;
       if (isLoggedIn && loggingIn) return AppRoutes.home;
 
       return null;

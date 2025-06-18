@@ -1,7 +1,11 @@
-// ignore_for_file: library_prefixes
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_ajalah/core/utils/responsive_spacer.dart';
+import 'package:new_ajalah/features/home/presentation/widgets/car_import_deals.dart';
+import 'package:new_ajalah/features/home/presentation/widgets/car_list_section.dart';
+import 'package:new_ajalah/features/home/presentation/widgets/hero_header.dart';
+import 'package:new_ajalah/features/home/presentation/widgets/search_form.dart';
+import 'package:new_ajalah/features/home/presentation/widgets/sell_banner.dart';
 import 'package:new_ajalah/shared/widgets/app_loading.dart';
 import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
 import '../../logic/home_cubit.dart';
@@ -20,12 +24,48 @@ class HomeBody extends StatelessWidget {
               return const Center(child: LoadingWidget());
             } else {
               return const ResponsiveScrollView(
-                child: Center(child: Text('HomeBody')),
+                isPaddine: false,
+                child: _HomeContent(),
               );
             }
           },
         );
       },
+    );
+  }
+}
+
+class _HomeContent extends StatelessWidget {
+  const _HomeContent();
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Column(
+          children: [
+            HeroHeader(),
+            const ResponsiveSpacer(size: SpacerSize.xLarge),
+            const ResponsiveSpacer(size: SpacerSize.xLarge),
+            const ResponsiveSpacer(size: SpacerSize.large),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  CarImportDeals(),
+                  const ResponsiveSpacer(size: SpacerSize.large),
+                  SellYourCarBanner(),
+                  const ResponsiveSpacer(size: SpacerSize.large),
+                  CarListSection(),
+                ],
+              ),
+            ),
+          ],
+        ),
+        Positioned(top: 560, left: 16, right: 16, child: SearchForm()),
+      ],
     );
   }
 }
