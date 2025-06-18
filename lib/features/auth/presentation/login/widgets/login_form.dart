@@ -215,11 +215,11 @@ import 'package:new_ajalah/features/auth/presentation/login/widgets/login_button
 import 'package:new_ajalah/features/auth/presentation/login/widgets/login_method_selector.dart';
 import 'package:new_ajalah/features/auth/presentation/login/widgets/remember_me.dart';
 import 'package:new_ajalah/features/auth/presentation/login/widgets/social_login.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/app_phone_field.dart';
-import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/shared/widgets/app_text_field.dart';
-import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/app_phone_field.dart';
+import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
+import 'package:new_ajalah/core/widgets/app_text_field.dart';
+import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class LoginForm extends StatefulWidget {

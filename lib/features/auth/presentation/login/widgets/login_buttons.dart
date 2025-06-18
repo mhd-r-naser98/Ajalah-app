@@ -7,8 +7,8 @@ import 'package:new_ajalah/core/config/router.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
 import 'package:new_ajalah/features/auth/presentation/login/logic/state/login_state.dart';
-import 'package:new_ajalah/shared/widgets/app_button.dart';
-import 'package:new_ajalah/shared/widgets/app_custom_link.dart';
+import 'package:new_ajalah/core/widgets/app_button.dart';
+import 'package:new_ajalah/core/widgets/app_custom_link.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class LoginButtons extends StatelessWidget {

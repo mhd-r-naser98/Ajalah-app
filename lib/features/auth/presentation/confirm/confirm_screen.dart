@@ -5,9 +5,9 @@ import 'package:new_ajalah/features/auth/presentation/confirm/logic/cubit/confir
 import 'package:new_ajalah/features/auth/presentation/confirm/logic/state/confirm_state.dart';
 import 'package:new_ajalah/features/auth/presentation/confirm/widgets/step_one.dart';
 import 'package:new_ajalah/features/auth/presentation/confirm/widgets/step_two.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
+import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 
 class ConfirmScreen extends StatelessWidget {
   const ConfirmScreen({super.key});

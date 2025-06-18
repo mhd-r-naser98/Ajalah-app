@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 import 'package:new_ajalah/features/auth/presentation/confirm/logic/cubit/confirm_cubit.dart';
-import 'package:new_ajalah/shared/widgets/app_button.dart';
-import 'package:new_ajalah/shared/widgets/app_custom_link.dart';
-import 'package:new_ajalah/shared/widgets/app_otp_field.dart';
-import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
+import 'package:new_ajalah/core/widgets/app_button.dart';
+import 'package:new_ajalah/core/widgets/app_custom_link.dart';
+import 'package:new_ajalah/core/widgets/app_otp_field.dart';
+import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class StepTwo extends StatefulWidget {

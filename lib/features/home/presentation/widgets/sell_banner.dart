@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/shared/widgets/app_button.dart';
+import 'package:new_ajalah/core/widgets/app_button.dart';
 
 class SellYourCarBanner extends StatelessWidget {
   const SellYourCarBanner({super.key});

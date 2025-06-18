@@ -5,7 +5,7 @@ import 'package:new_ajalah/core/di/service_locator.dart';
 import 'package:new_ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
 import 'package:new_ajalah/features/auth/presentation/register/pages/register_step_one.dart';
 import 'package:new_ajalah/features/auth/presentation/register/pages/register_step_two_otp.dart';
-import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});

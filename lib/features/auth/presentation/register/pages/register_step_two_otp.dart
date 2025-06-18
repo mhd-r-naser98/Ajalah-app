@@ -9,11 +9,11 @@ import 'package:new_ajalah/core/config/router.dart';
 import 'package:new_ajalah/core/di/service_locator.dart';
 import 'package:new_ajalah/core/services/storage_service.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/shared/widgets/app_button.dart';
-import 'package:new_ajalah/shared/widgets/app_custom_link.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/app_otp_field.dart';
-import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
+import 'package:new_ajalah/core/widgets/app_button.dart';
+import 'package:new_ajalah/core/widgets/app_custom_link.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/app_otp_field.dart';
+import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../logic/cubit/register_cubit.dart';

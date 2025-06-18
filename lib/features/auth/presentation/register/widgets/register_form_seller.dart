@@ -11,14 +11,14 @@ import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 import 'package:new_ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
 import 'package:new_ajalah/features/auth/presentation/register/logic/state/register_steps_data.dart';
 import 'package:new_ajalah/features/auth/presentation/register/widgets/role_radio_buttons.dart';
-import 'package:new_ajalah/shared/widgets/app_button.dart';
-import 'package:new_ajalah/shared/widgets/app_custom_link.dart';
-import 'package:new_ajalah/shared/widgets/app_date_field.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/app_phone_field.dart';
-import 'package:new_ajalah/shared/widgets/app_select_field.dart';
-import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/shared/widgets/app_text_field.dart';
+import 'package:new_ajalah/core/widgets/app_button.dart';
+import 'package:new_ajalah/core/widgets/app_custom_link.dart';
+import 'package:new_ajalah/core/widgets/app_date_field.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/app_phone_field.dart';
+import 'package:new_ajalah/core/widgets/app_select_field.dart';
+import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
+import 'package:new_ajalah/core/widgets/app_text_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterFormSeller extends StatefulWidget {

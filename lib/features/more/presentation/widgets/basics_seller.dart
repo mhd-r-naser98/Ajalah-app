@@ -7,7 +7,7 @@ import 'package:new_ajalah/core/config/router.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/user_cubit.dart';
 
-import 'package:new_ajalah/shared/widgets/app_list_tile.dart';
+import 'package:new_ajalah/core/widgets/app_list_tile.dart';
 
 class BasicsSeller extends StatelessWidget {
   const BasicsSeller({super.key});

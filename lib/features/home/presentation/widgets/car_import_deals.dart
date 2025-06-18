@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/shared/widgets/car_card.dart';
-import 'package:new_ajalah/shared/widgets/section_title.dart';
+import 'package:new_ajalah/core/widgets/car_card.dart';
+import 'package:new_ajalah/core/widgets/section_title.dart';
 
 class CarImportDeals extends StatelessWidget {
   const CarImportDeals({super.key});

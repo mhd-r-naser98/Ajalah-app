@@ -6,8 +6,8 @@ import 'package:new_ajalah/features/home/presentation/widgets/car_list_section.d
 import 'package:new_ajalah/features/home/presentation/widgets/hero_header.dart';
 import 'package:new_ajalah/features/home/presentation/widgets/search_form.dart';
 import 'package:new_ajalah/features/home/presentation/widgets/sell_banner.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 import '../../logic/home_cubit.dart';
 import '../../logic/home_state.dart';
 

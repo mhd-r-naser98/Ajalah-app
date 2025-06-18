@@ -5,8 +5,8 @@ import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:new_ajalah/core/forms/app_form_field_config.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 import 'package:new_ajalah/features/auth/presentation/confirm/logic/cubit/confirm_cubit.dart';
-import 'package:new_ajalah/shared/widgets/app_button.dart';
-import 'package:new_ajalah/shared/widgets/app_phone_field.dart';
+import 'package:new_ajalah/core/widgets/app_button.dart';
+import 'package:new_ajalah/core/widgets/app_phone_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class StepOne extends StatefulWidget {

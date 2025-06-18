@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/shared/widgets/app_tag.dart';
-import 'package:new_ajalah/shared/widgets/car_img_slider.dart';
+import 'package:new_ajalah/core/widgets/app_tag.dart';
+import 'package:new_ajalah/core/widgets/car_img_slider.dart';
 
 class CarCard extends StatefulWidget {
   final double width;

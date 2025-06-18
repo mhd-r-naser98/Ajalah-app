@@ -8,8 +8,8 @@ import 'package:new_ajalah/features/more/presentation/widgets/basics_seller.dart
 import 'package:new_ajalah/features/more/presentation/widgets/head_line.dart';
 import 'package:new_ajalah/features/more/presentation/widgets/profile_imgs.dart';
 import 'package:new_ajalah/features/more/presentation/widgets/settings_widget.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 // ignore: library_prefixes
 
 class MoreScreen extends StatelessWidget {

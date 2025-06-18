@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:new_ajalah/core/forms/app_form_field_config.dart';
 import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/shared/widgets/app_custom_link.dart';
-import 'package:new_ajalah/shared/widgets/app_select_field.dart';
+import 'package:new_ajalah/core/widgets/app_custom_link.dart';
+import 'package:new_ajalah/core/widgets/app_select_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class SearchForm extends StatelessWidget {

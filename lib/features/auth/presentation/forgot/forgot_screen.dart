@@ -6,9 +6,9 @@ import 'package:new_ajalah/features/auth/presentation/forgot/logic/state/forgot_
 import 'package:new_ajalah/features/auth/presentation/forgot/widgets/step_one.dart';
 import 'package:new_ajalah/features/auth/presentation/forgot/widgets/step_three.dart';
 import 'package:new_ajalah/features/auth/presentation/forgot/widgets/step_two.dart';
-import 'package:new_ajalah/shared/widgets/app_loading.dart';
-import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+import 'package:new_ajalah/core/widgets/app_loading.dart';
+import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
+import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 
 class ForgotScreen extends StatelessWidget {
   const ForgotScreen({super.key});
