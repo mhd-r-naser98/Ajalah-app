@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/core/di/service_locator.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/google_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/login/widgets/login_form.dart';
-import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
+import '../../../../../core/di/service_locator.dart';
+import '../../../../../features/auth/presentation/login/logic/cubit/google_cubit.dart';
+import '../../../../../features/auth/presentation/login/logic/cubit/login_cubit.dart';
+import '../../../../../features/auth/presentation/login/widgets/login_form.dart';
+import '../../../../../core/widgets/responsive_scroll_view.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({super.key});

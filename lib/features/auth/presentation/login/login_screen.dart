@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/features/auth/presentation/login/widgets/login_body.dart';
+import '../../../../../features/auth/presentation/login/widgets/login_body.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

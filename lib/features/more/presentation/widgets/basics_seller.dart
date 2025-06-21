@@ -1,13 +1,12 @@
 // ignore: file_names
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/config/router.dart';
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/core/widgets/app_list_tile.dart';
+import 'package:ajalah/features/auth/presentation/login/logic/cubit/user_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/config/router.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/user_cubit.dart';
-
-import 'package:new_ajalah/core/widgets/app_list_tile.dart';
 
 class BasicsSeller extends StatelessWidget {
   const BasicsSeller({super.key});

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:new_ajalah/features/auth/models/user_model.dart';
+import '../../../../../../features/auth/models/user_model.dart';
 
 abstract class UserState extends Equatable {
   const UserState();

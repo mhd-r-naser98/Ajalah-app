@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
+import '../../core/widgets/app_snack_bar.dart';
 
 class MapPickerScreen extends StatefulWidget {
   final LatLng initialPosition;

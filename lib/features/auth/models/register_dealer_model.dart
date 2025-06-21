@@ -1,5 +1,5 @@
-import 'package:new_ajalah/features/auth/models/address.dart';
-import 'package:new_ajalah/features/auth/models/geo_location.dart';
+import '../../../features/auth/models/address.dart';
+import '../../../features/auth/models/geo_location.dart';
 
 class RegisterDealerModel {
   final String tradingName;

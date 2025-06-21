@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/forms/app_form_field_config.dart';
-import 'package:new_ajalah/core/forms/form_validation_messages.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/features/auth/presentation/forgot/logic/cubit/forgot_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/forgot/widgets/pass_requirements.dart';
-import 'package:new_ajalah/core/widgets/app_button.dart';
-import 'package:new_ajalah/core/widgets/app_text_field.dart';
+import '../../../../../app/theme/extensions/theme_extensions.dart';
+import '../../../../../core/forms/app_form_field_config.dart';
+import '../../../../../core/forms/form_validation_messages.dart';
+import '../../../../../core/utils/responsive_spacer.dart';
+import '../../../../../features/auth/presentation/forgot/logic/cubit/forgot_cubit.dart';
+import '../../../../../features/auth/presentation/forgot/widgets/pass_requirements.dart';
+import '../../../../../core/widgets/app_button.dart';
+import '../../../../../core/widgets/app_text_field.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class StepThree extends StatefulWidget {

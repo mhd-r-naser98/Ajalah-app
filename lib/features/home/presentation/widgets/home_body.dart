@@ -1,13 +1,16 @@
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/core/widgets/app_loading.dart';
+import 'package:ajalah/core/widgets/responsive_scroll_view.dart';
+import 'package:ajalah/features/home/presentation/widgets/car_import_deals.dart';
+import 'package:ajalah/features/home/presentation/widgets/car_list_section.dart';
+import 'package:ajalah/features/home/presentation/widgets/car_new_section.dart';
+import 'package:ajalah/features/home/presentation/widgets/car_rent_deals.dart';
+import 'package:ajalah/features/home/presentation/widgets/hero_header.dart';
+import 'package:ajalah/features/home/presentation/widgets/search_form.dart';
+import 'package:ajalah/features/home/presentation/widgets/sell_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/features/home/presentation/widgets/car_import_deals.dart';
-import 'package:new_ajalah/features/home/presentation/widgets/car_list_section.dart';
-import 'package:new_ajalah/features/home/presentation/widgets/hero_header.dart';
-import 'package:new_ajalah/features/home/presentation/widgets/search_form.dart';
-import 'package:new_ajalah/features/home/presentation/widgets/sell_banner.dart';
-import 'package:new_ajalah/core/widgets/app_loading.dart';
-import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
+
 import '../../logic/home_cubit.dart';
 import '../../logic/home_state.dart';
 
@@ -54,11 +57,15 @@ class _HomeContent extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  CarImportDeals(),
+                  const CarNewDeals(),
                   const ResponsiveSpacer(size: SpacerSize.large),
-                  SellYourCarBanner(),
+                  const CarRentDeals(),
                   const ResponsiveSpacer(size: SpacerSize.large),
-                  CarListSection(),
+                  const CarImportDeals(),
+                  const ResponsiveSpacer(size: SpacerSize.large),
+                  const SellYourCarBanner(),
+                  const ResponsiveSpacer(size: SpacerSize.large),
+                  const CarListSection(),
                 ],
               ),
             ),

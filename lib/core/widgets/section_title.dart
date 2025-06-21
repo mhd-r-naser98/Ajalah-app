@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/widgets/app_custom_link.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
+import '../../core/widgets/app_custom_link.dart';
 
 class SectionTitle extends StatelessWidget {
   final String title;

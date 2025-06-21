@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/localization/app_localizations.dart';
+import '../../../app/localization/app_localizations.dart';
 import 'app_colors.dart';
 import 'app_radius.dart';
 import 'app_text_styles.dart';

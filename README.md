@@ -1,4 +1,4 @@
-# 📱 Ajalah
+# 📱 ajalah
 
 A modern Flutter application for managing and browsing articles and news, built with clean architecture, robust state management, and scalable service integration.
 
@@ -15,8 +15,8 @@ A modern Flutter application for managing and browsing articles and news, built 
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/new_ajalah.git
-cd new_ajalah
+git clone https://github.com/your-username/ajalah.git
+cd ajalah
 flutter pub get
 ```
 

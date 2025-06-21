@@ -1,5 +1,5 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
 
 class ProfileImgs extends StatelessWidget {
   final String? avatarUrl;

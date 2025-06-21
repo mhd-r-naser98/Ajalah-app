@@ -1,6 +1,6 @@
+import 'package:ajalah/core/widgets/app_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_ajalah/core/widgets/app_nav_bar.dart';
 // ignore: library_prefixes
 import '../../../core/config/router.dart';
 

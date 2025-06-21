@@ -103,4 +103,5 @@ const Map<String, String> enUs = {
   "ResetPassword": "Reset Password",
   "SendCode": "Send Verification Code",
   "PassBe": 'Cannot be "password" or "123"',
+  "UnexpectedError": "Unexpected error",
 };

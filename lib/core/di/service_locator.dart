@@ -1,9 +1,9 @@
 import 'package:get_it/get_it.dart';
-import 'package:new_ajalah/core/network/api_provider.dart';
-import 'package:new_ajalah/core/services/storage_service.dart';
-import 'package:new_ajalah/features/auth/data/auth_repo.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
+import '../../core/network/api_provider.dart';
+import '../../core/services/storage_service.dart';
+import '../../features/auth/data/auth_repo.dart';
+import '../../features/auth/presentation/login/logic/cubit/login_cubit.dart';
+import '../../features/auth/presentation/register/logic/cubit/register_cubit.dart';
 
 final locator = GetIt.instance;
 

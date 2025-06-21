@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:new_ajalah/core/forms/form_validation_messages.dart';
+import '../../core/forms/form_validation_messages.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
 
 class ReactiveOtpField extends StatelessWidget {
   final String formControlName;

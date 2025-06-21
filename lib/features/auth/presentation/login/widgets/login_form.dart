@@ -2,24 +2,24 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:go_router/go_router.dart';
 // import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-// import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
+// import '../app/theme/extensions/theme_extensions.dart';
 // // ignore: library_prefixes
-// import 'package:new_ajalah/core/config/router.dart' as AppRoutes;
-// import 'package:new_ajalah/core/forms/app_form_field_config.dart';
-// import 'package:new_ajalah/core/utils/phone_utils.dart';
-// import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-// import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
-// import 'package:new_ajalah/features/auth/presentation/login/logic/state/login_state.dart';
+// import '../core/config/router.dart' as AppRoutes;
+// import '../core/forms/app_form_field_config.dart';
+// import '../core/utils/phone_utils.dart';
+// import '../core/utils/responsive_spacer.dart';
+// import '../features/auth/presentation/login/logic/cubit/login_cubit.dart';
+// import '../features/auth/presentation/login/logic/state/login_state.dart';
 
-// import 'package:new_ajalah/features/auth/presentation/login/widgets/login_buttons.dart';
-// import 'package:new_ajalah/features/auth/presentation/login/widgets/login_method_selector.dart';
-// import 'package:new_ajalah/features/auth/presentation/login/widgets/remember_me.dart';
-// import 'package:new_ajalah/features/auth/presentation/login/widgets/social_login.dart';
-// import 'package:new_ajalah/shared/widgets/app_loading.dart';
-// import 'package:new_ajalah/shared/widgets/app_phone_field.dart';
-// import 'package:new_ajalah/shared/widgets/app_snack_bar.dart';
-// import 'package:new_ajalah/shared/widgets/app_text_field.dart';
-// import 'package:new_ajalah/shared/widgets/responsive_scroll_view.dart';
+// import '../features/auth/presentation/login/widgets/login_buttons.dart';
+// import '../features/auth/presentation/login/widgets/login_method_selector.dart';
+// import '../features/auth/presentation/login/widgets/remember_me.dart';
+// import '../features/auth/presentation/login/widgets/social_login.dart';
+// import '../shared/widgets/app_loading.dart';
+// import '../shared/widgets/app_phone_field.dart';
+// import '../shared/widgets/app_snack_bar.dart';
+// import '../shared/widgets/app_text_field.dart';
+// import '../shared/widgets/responsive_scroll_view.dart';
 // import 'package:reactive_forms/reactive_forms.dart';
 
 // class LoginForm extends StatefulWidget {
@@ -199,28 +199,27 @@
 //     );
 //   }
 // }
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/config/router.dart';
+import 'package:ajalah/core/forms/app_form_field_config.dart';
+import 'package:ajalah/core/utils/phone_utils.dart';
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/core/widgets/app_loading.dart';
+import 'package:ajalah/core/widgets/app_phone_field.dart';
+import 'package:ajalah/core/widgets/app_snack_bar.dart';
+import 'package:ajalah/core/widgets/app_text_field.dart';
+import 'package:ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
+import 'package:ajalah/features/auth/presentation/login/logic/state/login_state.dart';
+import 'package:ajalah/features/auth/presentation/login/widgets/login_buttons.dart';
+import 'package:ajalah/features/auth/presentation/login/widgets/remember_me.dart';
+import 'package:ajalah/features/auth/presentation/login/widgets/social_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/config/router.dart';
-import 'package:new_ajalah/core/forms/app_form_field_config.dart';
-import 'package:new_ajalah/core/utils/phone_utils.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/login_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/state/login_state.dart';
-
-import 'package:new_ajalah/features/auth/presentation/login/widgets/login_buttons.dart';
-import 'package:new_ajalah/features/auth/presentation/login/widgets/login_method_selector.dart';
-import 'package:new_ajalah/features/auth/presentation/login/widgets/remember_me.dart';
-import 'package:new_ajalah/features/auth/presentation/login/widgets/social_login.dart';
-import 'package:new_ajalah/core/widgets/app_loading.dart';
-import 'package:new_ajalah/core/widgets/app_phone_field.dart';
-import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/core/widgets/app_text_field.dart';
-import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+
+import 'login_method_selector.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -312,14 +311,7 @@ class _LoginFormState extends State<LoginForm> {
         _updateFieldValidators(selected);
 
         if (state is LoginLoading) {
-          return const Center(
-            child: ResponsiveScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [LoadingWidget()],
-              ),
-            ),
-          );
+          return const Center(child: LoadingWidget());
         }
 
         WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -369,14 +361,13 @@ class _LoginFormState extends State<LoginForm> {
                   name: 'password',
                   label: '${t('password')}*',
                   forceLTR: true,
-
                   obscureText: true,
                   hintText: '************',
                 ),
                 showErrors: true,
               ),
               const ResponsiveSpacer(size: SpacerSize.small),
-              RememberMeCheckbox(),
+              const RememberMeCheckbox(),
               const ResponsiveSpacer(size: SpacerSize.large),
               LoginButtons(
                 form: form,
@@ -398,7 +389,7 @@ class _LoginFormState extends State<LoginForm> {
                 ],
               ),
               const ResponsiveSpacer(size: SpacerSize.large),
-              SocialLoginButtons(),
+              const SocialLoginButtons(),
               const ResponsiveSpacer(size: SpacerSize.large),
             ],
           ),

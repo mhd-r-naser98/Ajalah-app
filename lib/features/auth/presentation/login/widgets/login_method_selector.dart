@@ -1,6 +1,6 @@
+import 'package:ajalah/features/auth/presentation/login/logic/state/login_state.dart';
+import 'package:ajalah/features/auth/presentation/login/widgets/email_phone_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/state/login_state.dart';
-import 'package:new_ajalah/features/auth/presentation/login/widgets/email_phone_buttons.dart';
 
 class LoginMethodSelector extends StatelessWidget {
   final UserLogin selected;

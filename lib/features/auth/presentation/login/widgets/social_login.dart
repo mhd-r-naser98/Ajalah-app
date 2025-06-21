@@ -1,8 +1,8 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/features/auth/presentation/login/logic/cubit/google_cubit.dart';
+import 'package:ajalah/features/auth/presentation/login/logic/state/google_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/cubit/google_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/state/google_state.dart';
 
 class SocialLoginButtons extends StatelessWidget {
   const SocialLoginButtons({super.key});
@@ -16,7 +16,7 @@ class SocialLoginButtons extends StatelessWidget {
             context,
           ).showSnackBar(SnackBar(content: Text(state.message)));
         } else if (state is GoogleAuthSuccess) {
-          Navigator.of(context).pushReplacementNamed('/home');
+          // Navigator.of(context).pushReplacementNamed('/home');
         }
       },
       builder: (context, state) {

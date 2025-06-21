@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/core/di/service_locator.dart';
-import 'package:new_ajalah/core/services/storage_service.dart';
-import 'package:new_ajalah/features/auth/data/auth_repo.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/state/user_state.dart';
+import '../../../../../../core/di/service_locator.dart';
+import '../../../../../../core/services/storage_service.dart';
+import '../../../../../../features/auth/data/auth_repo.dart';
+import '../../../../../../features/auth/presentation/login/logic/state/user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
   final StorageService _storage = locator<StorageService>();

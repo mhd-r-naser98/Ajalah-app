@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../groups/text_style_group.dart';
 
 @immutable
@@ -95,7 +94,8 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
     );
   }
 
-  static const _lineHeight = 1.8;
+  static const _lineHeight = 1.2;
+  static const _fontFamily = 'Cairo';
   static const _defaultColor = Color(0xFF2A3950);
   static const _accentColor = Color(0xFF02C0AA);
   static const _labelGrey = Color(0xFF8E8E93);
@@ -104,7 +104,8 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
     required double fontSize,
     FontWeight? weight,
     Color? color,
-  }) => GoogleFonts.cairo(
+  }) => TextStyle(
+    fontFamily: _fontFamily,
     fontSize: fontSize,
     fontWeight: weight,
     height: _lineHeight,

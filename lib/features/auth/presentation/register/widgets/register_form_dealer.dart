@@ -1,27 +1,26 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/config/router.dart';
+import 'package:ajalah/core/forms/app_form_field_config.dart';
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/core/widgets/app_button.dart';
+import 'package:ajalah/core/widgets/app_custom_link.dart';
+import 'package:ajalah/core/widgets/app_loading.dart';
+import 'package:ajalah/core/widgets/app_map.dart';
+import 'package:ajalah/core/widgets/app_phone_field.dart';
+import 'package:ajalah/core/widgets/app_select_field.dart';
+import 'package:ajalah/core/widgets/app_snack_bar.dart';
+import 'package:ajalah/core/widgets/app_text_field.dart';
+import 'package:ajalah/features/auth/models/address.dart';
+import 'package:ajalah/features/auth/models/geo_location.dart';
+import 'package:ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
+import 'package:ajalah/features/auth/presentation/register/logic/state/register_steps_data.dart';
+import 'package:ajalah/features/auth/presentation/register/widgets/role_radio_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-// ignore: library_prefixes
-import 'package:new_ajalah/core/config/router.dart';
-import 'package:new_ajalah/core/forms/app_form_field_config.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/features/auth/models/address.dart';
-import 'package:new_ajalah/features/auth/models/geo_location.dart';
-import 'package:new_ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/register/logic/state/register_steps_data.dart';
-import 'package:new_ajalah/features/auth/presentation/register/widgets/role_radio_buttons.dart';
-import 'package:new_ajalah/core/widgets/app_button.dart';
-import 'package:new_ajalah/core/widgets/app_custom_link.dart'
-    show CustomLinkText;
-import 'package:new_ajalah/core/widgets/app_loading.dart';
-import 'package:new_ajalah/core/widgets/app_map.dart';
-import 'package:new_ajalah/core/widgets/app_phone_field.dart';
-import 'package:new_ajalah/core/widgets/app_select_field.dart';
-import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/core/widgets/app_text_field.dart';
+
 import 'package:reactive_forms/reactive_forms.dart';
 
 class RegisterFormDealer extends StatefulWidget {

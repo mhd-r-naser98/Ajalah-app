@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:new_ajalah/app/localization/app_localizations.dart';
-import 'package:new_ajalah/app/theme/logic/cubit/theme_cubit.dart';
-import 'package:new_ajalah/core/utils/size_config.dart';
+import '../app/localization/app_localizations.dart';
+import '../core/utils/size_config.dart';
 import 'router.dart';
 import 'localization/logic/cubit/locale_cubit.dart';
 import 'theme/app_theme.dart';
 import '../core/services/storage_service.dart';
+import '../app/theme/logic/cubit/theme_cubit.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

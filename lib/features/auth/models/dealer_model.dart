@@ -1,6 +1,6 @@
-import 'package:new_ajalah/features/auth/models/address.dart';
-import 'package:new_ajalah/features/auth/models/geo_location.dart';
-import 'package:new_ajalah/features/auth/models/opening_hours.dart';
+import '../../../features/auth/models/address.dart';
+import '../../../features/auth/models/geo_location.dart';
+import '../../../features/auth/models/opening_hours.dart';
 
 class DealerModel {
   final String dealershipId;

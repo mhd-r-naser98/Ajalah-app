@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
 
 class AppListTile extends StatelessWidget {
   final String title;

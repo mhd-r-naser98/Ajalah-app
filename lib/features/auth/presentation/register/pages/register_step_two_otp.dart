@@ -1,19 +1,19 @@
-// ignore_for_file: library_prefixes, use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously
 
+import 'package:ajalah/app/router.dart';
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/config/router.dart';
+import 'package:ajalah/core/di/service_locator.dart';
+import 'package:ajalah/core/services/storage_service.dart';
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/core/widgets/app_button.dart';
+import 'package:ajalah/core/widgets/app_custom_link.dart';
+import 'package:ajalah/core/widgets/app_loading.dart';
+import 'package:ajalah/core/widgets/app_otp_field.dart';
+import 'package:ajalah/core/widgets/app_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/app/router.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/config/router.dart';
-import 'package:new_ajalah/core/di/service_locator.dart';
-import 'package:new_ajalah/core/services/storage_service.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/core/widgets/app_button.dart';
-import 'package:new_ajalah/core/widgets/app_custom_link.dart';
-import 'package:new_ajalah/core/widgets/app_loading.dart';
-import 'package:new_ajalah/core/widgets/app_otp_field.dart';
-import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 import '../logic/cubit/register_cubit.dart';
@@ -60,13 +60,7 @@ class _RegisterStepTwoOtpState extends State<RegisterStepTwoOtp> {
       },
       builder: (context, state) {
         if (state is RegisterLoading) {
-          return const Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [LoadingWidget()],
-            ),
-          );
+          return const Center(child: LoadingWidget());
         }
         if (state is RegisterFailure) {
           AppSnackBar.error(context, state.error);

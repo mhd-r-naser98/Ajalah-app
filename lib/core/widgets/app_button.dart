@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/utils/size_config.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
+import '../../core/utils/size_config.dart';
 
 class CustomGeneralButton extends StatelessWidget {
   const CustomGeneralButton({super.key, this.text = 'Next', this.onTap});

@@ -1,4 +1,4 @@
-package com.example.new_ajalah
+package com.ajalah.app
 
 import io.flutter.embedding.android.FlutterActivity
 

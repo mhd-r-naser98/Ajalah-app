@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.new_ajalah"
+    namespace = "com.ajalah.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = "28.1.13356709"
 
@@ -20,8 +20,7 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.new_ajalah"
+        applicationId = "com.ajalah.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

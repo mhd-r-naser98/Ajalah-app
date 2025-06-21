@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_ajalah/features/auth/presentation/confirm/logic/cubit/confirm_cubit.dart';
-import 'package:new_ajalah/features/auth/presentation/confirm/logic/state/confirm_state.dart';
-import 'package:new_ajalah/features/auth/presentation/confirm/widgets/step_one.dart';
-import 'package:new_ajalah/features/auth/presentation/confirm/widgets/step_two.dart';
-import 'package:new_ajalah/core/widgets/app_loading.dart';
-import 'package:new_ajalah/core/widgets/app_snack_bar.dart';
-import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
+import '../../../../features/auth/presentation/confirm/logic/cubit/confirm_cubit.dart';
+import '../../../../features/auth/presentation/confirm/logic/state/confirm_state.dart';
+import '../../../../features/auth/presentation/confirm/widgets/step_one.dart';
+import '../../../../features/auth/presentation/confirm/widgets/step_two.dart';
+import '../../../../core/widgets/app_loading.dart';
+import '../../../../core/widgets/app_snack_bar.dart';
+import '../../../../core/widgets/responsive_scroll_view.dart';
 
 class ConfirmScreen extends StatelessWidget {
   const ConfirmScreen({super.key});

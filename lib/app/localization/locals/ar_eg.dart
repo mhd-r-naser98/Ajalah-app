@@ -103,4 +103,5 @@ const Map<String, String> arEg = {
   "ResetPassword": "إعادة تعيين كلمة المرور",
   "SendCode": "إرسال رمز التحقق",
   "PassBe": 'لا يمكن أن تكون "password" أو "123"',
+  "UnexpectedError": "خطا غير متوقع",
 };

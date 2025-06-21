@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:new_ajalah/core/utils/size_config.dart';
+// import '../core/utils/size_config.dart';
 
 // class ResponsiveScrollView extends StatelessWidget {
 //   final Widget child;

@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_ajalah/core/di/service_locator.dart';
-import 'package:new_ajalah/core/services/storage_service.dart';
-import 'package:new_ajalah/features/account/dashboard/dashboard_screen.dart';
-import 'package:new_ajalah/features/account/order-tracking/order_tracking.dart';
-import 'package:new_ajalah/features/account/saved/saved_screen.dart';
-import 'package:new_ajalah/features/auth/presentation/confirm/confirm_screen.dart';
-import 'package:new_ajalah/features/auth/presentation/forgot/forgot_screen.dart';
-import 'package:new_ajalah/features/carListing/new/new_car_screen.dart';
-import 'package:new_ajalah/features/carListing/rent/rent_car_screen.dart';
-import 'package:new_ajalah/features/carListing/search-by/search_by_screen.dart';
-import 'package:new_ajalah/features/compare/compare_screen.dart';
-import 'package:new_ajalah/features/global/about/about_screen.dart';
-import 'package:new_ajalah/features/global/privacy/privacy_screen.dart';
-import 'package:new_ajalah/features/global/terms/terms_screen.dart';
-import 'package:new_ajalah/features/home/logic/home_cubit.dart';
-import 'package:new_ajalah/features/home/presentation/widgets/home_body.dart';
-import 'package:new_ajalah/features/carListing/imported/imported_screen.dart';
-import 'package:new_ajalah/features/account/sell/sell_screen.dart';
-import 'package:new_ajalah/features/more/presentation/more_screen.dart';
-import 'package:new_ajalah/features/carListing/used/used_screen.dart';
-import 'package:new_ajalah/features/splash/presentation/splash_view.dart';
+import '../core/di/service_locator.dart';
+import '../core/services/storage_service.dart';
+import '../features/account/dashboard/dashboard_screen.dart';
+import '../features/account/order-tracking/order_tracking.dart';
+import '../features/account/saved/saved_screen.dart';
+import '../features/auth/presentation/confirm/confirm_screen.dart';
+import '../features/auth/presentation/forgot/forgot_screen.dart';
+import '../features/carListing/new/new_car_screen.dart';
+import '../features/carListing/rent/rent_car_screen.dart';
+import '../features/carListing/search-by/search_by_screen.dart';
+import '../features/compare/compare_screen.dart';
+import '../features/global/about/about_screen.dart';
+import '../features/global/privacy/privacy_screen.dart';
+import '../features/global/terms/terms_screen.dart';
+import '../features/home/logic/home_cubit.dart';
+import '../features/home/presentation/widgets/home_body.dart';
+import '../features/carListing/imported/imported_screen.dart';
+import '../features/account/sell/sell_screen.dart';
+import '../features/more/presentation/more_screen.dart';
+import '../features/carListing/used/used_screen.dart';
+import '../features/splash/presentation/splash_view.dart';
 import '../core/config/router.dart';
 import '../features/auth/presentation/login/login_screen.dart';
 import '../features/auth/presentation/register/register_screen.dart';
@@ -168,7 +168,7 @@ class AppRouter {
         AppRoutes.sell,
       ].contains(location);
 
-      if (!isLoggedIn && (!loggingIn || !account)) return AppRoutes.login;
+      if (!isLoggedIn && (!loggingIn || account)) return AppRoutes.login;
       if (isLoggedIn && loggingIn) return AppRoutes.home;
 
       return null;

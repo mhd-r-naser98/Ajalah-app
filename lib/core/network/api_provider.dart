@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:new_ajalah/core/network/interceptors/base_url_interceptor.dart';
-import 'package:new_ajalah/core/network/interceptors/logging_interceptor.dart';
+import '../../core/network/interceptors/base_url_interceptor.dart';
+import '../../core/network/interceptors/logging_interceptor.dart';
 import '../services/storage_service.dart';
 import 'interceptors/token_interceptor.dart';
 

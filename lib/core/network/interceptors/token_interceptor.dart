@@ -1,8 +1,8 @@
 // ignore_for_file: library_prefixes
 
 import 'package:dio/dio.dart';
-import 'package:new_ajalah/app/router.dart';
-import 'package:new_ajalah/core/config/router.dart';
+import '../../../app/router.dart';
+import '../../../core/config/router.dart';
 import '../../services/storage_service.dart';
 
 class TokenInterceptor extends Interceptor {

@@ -1,6 +1,5 @@
+import 'package:ajalah/core/utils/responsive_spacer.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
 
 class HeroHeader extends StatelessWidget {
   const HeroHeader({super.key});
@@ -24,7 +23,7 @@ class HeroHeader extends StatelessWidget {
                 'Drive Deals, \nSell Fast',
                 textAlign: TextAlign.center,
 
-                style: GoogleFonts.poppins(
+                style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,

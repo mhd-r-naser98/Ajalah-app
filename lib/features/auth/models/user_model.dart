@@ -1,4 +1,4 @@
-import 'package:new_ajalah/features/auth/models/address.dart';
+import '../../../features/auth/models/address.dart';
 import 'dealer_model.dart';
 
 class UserModel {

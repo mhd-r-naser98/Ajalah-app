@@ -1,6 +1,6 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/features/auth/models/user_model.dart';
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/features/auth/models/user_model.dart';
 
 class HeadLine extends StatefulWidget {
   final UserModel? user;

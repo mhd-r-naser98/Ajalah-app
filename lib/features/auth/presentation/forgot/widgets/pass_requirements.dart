@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/extensions/pass_extension.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
+import '../../../../../app/theme/extensions/theme_extensions.dart';
+import '../../../../../core/extensions/pass_extension.dart';
+import '../../../../../core/utils/responsive_spacer.dart';
 
 class PasswordRequirements extends StatelessWidget {
   final String password;

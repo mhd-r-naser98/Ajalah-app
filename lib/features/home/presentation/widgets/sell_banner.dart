@@ -1,7 +1,7 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/core/widgets/app_button.dart';
 
 class SellYourCarBanner extends StatelessWidget {
   const SellYourCarBanner({super.key});
@@ -10,7 +10,7 @@ class SellYourCarBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 165.0,
+      height: 170.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(context.radius.md)),
 
@@ -23,6 +23,8 @@ class SellYourCarBanner extends StatelessWidget {
         padding: const EdgeInsets.all(24.0),
 
         child: Column(
+          mainAxisSize: MainAxisSize.min,
+
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

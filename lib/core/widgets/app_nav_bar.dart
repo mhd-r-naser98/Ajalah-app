@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
+import '../../core/utils/responsive_spacer.dart';
 
 class AppBottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -39,35 +39,35 @@ class AppBottomNavBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _NavItem(
-              asset: 'assets/imgs/home.svg',
+              asset: 'assets/icons/home.svg',
               label: t('Home'),
               selected: currentIndex == 0,
               onTap: () => onTap(0),
               colors: context.colors,
             ),
             _NavItem(
-              asset: 'assets/imgs/used.svg',
+              asset: 'assets/icons/used.svg',
               label: t('Used'),
               selected: currentIndex == 1,
               onTap: () => onTap(1),
               colors: context.colors,
             ),
             _NavItem(
-              asset: 'assets/imgs/sell.svg',
+              asset: 'assets/icons/sell.svg',
               label: t('Sell'),
               selected: currentIndex == 2,
               onTap: () => onTap(2),
               colors: context.colors,
             ),
             _NavItem(
-              asset: 'assets/imgs/imported.svg',
+              asset: 'assets/icons/imported.svg',
               label: t('Imported'),
               selected: currentIndex == 3,
               onTap: () => onTap(3),
               colors: context.colors,
             ),
             _NavItem(
-              asset: 'assets/imgs/more.svg',
+              asset: 'assets/icons/more.svg',
               label: t('More'),
               selected: currentIndex == 4,
               onTap: () => onTap(4),
@@ -144,7 +144,6 @@ class _NavItemState extends State<_NavItem>
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                // const ResponsiveSpacer(size: SpacerSize.medium),
                 SvgPicture.asset(
                   widget.asset,
                   height: 24,

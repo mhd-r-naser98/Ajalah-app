@@ -1,8 +1,8 @@
+import 'package:ajalah/core/di/service_locator.dart';
+import 'package:ajalah/core/widgets/responsive_scroll_view.dart';
+import 'package:ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/core/di/service_locator.dart';
-import 'package:new_ajalah/features/auth/presentation/register/logic/cubit/register_cubit.dart';
-import 'package:new_ajalah/core/widgets/responsive_scroll_view.dart';
 
 class PrivacyScreen extends StatelessWidget {
   const PrivacyScreen({super.key});

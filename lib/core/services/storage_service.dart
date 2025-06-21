@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:new_ajalah/features/auth/models/user_model.dart';
-import 'package:new_ajalah/features/auth/presentation/login/logic/state/login_state.dart';
+import '../../features/auth/models/user_model.dart';
+import '../../features/auth/presentation/login/logic/state/login_state.dart';
 
 abstract class StorageService {
   Future<void> saveToken(String token);

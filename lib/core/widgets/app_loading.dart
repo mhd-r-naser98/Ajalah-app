@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/core/utils/size_config.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
+import '../../core/utils/responsive_spacer.dart';
+import '../../core/utils/size_config.dart';
 
 class LoadingWidget extends StatefulWidget {
   const LoadingWidget({super.key});
@@ -56,7 +56,7 @@ class _LoadingWidgetState extends State<LoadingWidget>
           FadeTransition(
             opacity: fadingAni,
             child: Text(
-              'Ajalah',
+              'ajalah',
               style: context.textStyles.styles.displaySmall,
             ),
           ),

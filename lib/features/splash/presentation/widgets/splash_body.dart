@@ -1,9 +1,9 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/utils/responsive_spacer.dart';
+import 'package:ajalah/features/splash/logic/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/features/splash/logic/splash_cubit.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});
@@ -79,7 +79,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
             FadeTransition(
               opacity: fadingAni,
               child: Text(
-                'Ajalah',
+                'ajalah',
                 style: context.textStyles.styles.displaySmall,
               ),
             ),

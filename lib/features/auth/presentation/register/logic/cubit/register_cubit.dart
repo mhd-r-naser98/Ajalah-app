@@ -1,10 +1,11 @@
+import 'package:ajalah/core/services/storage_service.dart';
+import 'package:ajalah/features/auth/models/address.dart';
+import 'package:ajalah/features/auth/models/geo_location.dart';
+import 'package:ajalah/features/auth/models/register_dealer_model.dart';
+import 'package:ajalah/features/auth/models/register_seller_model.dart';
+import 'package:ajalah/features/auth/presentation/register/logic/state/register_steps_data.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:new_ajalah/core/services/storage_service.dart';
-import 'package:new_ajalah/features/auth/models/address.dart';
-import 'package:new_ajalah/features/auth/models/geo_location.dart';
-import 'package:new_ajalah/features/auth/models/register_dealer_model.dart';
-import 'package:new_ajalah/features/auth/models/register_seller_model.dart';
-import 'package:new_ajalah/features/auth/presentation/register/logic/state/register_steps_data.dart';
+
 import '../../../../data/auth_repo.dart';
 import 'package:equatable/equatable.dart';
 

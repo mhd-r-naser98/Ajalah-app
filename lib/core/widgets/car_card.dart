@@ -1,12 +1,18 @@
+import 'package:ajalah/core/utils/flags_util.dart';
+import 'package:ajalah/shared/models/car_card_model.dart';
 import 'package:flutter/material.dart';
-import 'package:new_ajalah/app/theme/extensions/theme_extensions.dart';
-import 'package:new_ajalah/core/utils/responsive_spacer.dart';
-import 'package:new_ajalah/core/widgets/app_tag.dart';
-import 'package:new_ajalah/core/widgets/car_img_slider.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../app/theme/extensions/theme_extensions.dart';
+import '../../core/utils/responsive_spacer.dart';
+import '../../core/widgets/app_tag.dart';
+import '../../core/widgets/car_img_slider.dart';
 
 class CarCard extends StatefulWidget {
   final double width;
   final double height;
+  final bool isImported;
+  final CarCardItem? item;
+
   final List<String> imageUrls;
 
   const CarCard({
@@ -14,6 +20,8 @@ class CarCard extends StatefulWidget {
     required this.imageUrls,
     this.width = 300,
     this.height = 225,
+    this.isImported = false,
+    this.item,
   });
 
   @override
@@ -23,9 +31,13 @@ class CarCard extends StatefulWidget {
 class _CarCardState extends State<CarCard> {
   @override
   Widget build(BuildContext context) {
+    final url = getFlagUrl(widget.item?.countryOfOrigin ?? "");
+
     return Card(
       elevation: 2.5,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
+
         children: [
           SizedBox(
             width: widget.width,
@@ -102,6 +114,8 @@ class _CarCardState extends State<CarCard> {
               padding: const EdgeInsets.all(12.0),
 
               child: Column(
+                mainAxisSize: MainAxisSize.min,
+
                 crossAxisAlignment: CrossAxisAlignment.start,
 
                 children: [
@@ -144,14 +158,60 @@ class _CarCardState extends State<CarCard> {
                   ),
 
                   const ResponsiveSpacer(size: SpacerSize.xLarge),
-                  const ResponsiveSpacer(size: SpacerSize.medium),
-                  Text(
-                    '\$ 999,999',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.redAccent,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+
+                    children: [
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          spacing: 2,
+                          children: [
+                            if (widget.item?.countryOfOrigin == null) ...[
+                              SvgPicture.asset(
+                                'assets/icons/location.svg',
+                                height: 21,
+                                width: 20,
+
+                                colorFilter: ColorFilter.mode(
+                                  context.colors.text,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                              Text(
+                                'Aleppo',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  height: 1.2,
+                                  color: context.colors.text,
+                                  letterSpacing: -0.5,
+                                ),
+                              ),
+                            ] else
+                              url.startsWith("http")
+                                  ? Icon(
+                                      Icons.location_off,
+                                      size: 22,
+                                      color: context.colors.secondary.main,
+                                    )
+                                  : Image.asset(url, width: 48, height: 36),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        '22000\$',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2,
+                          color: context.colors.text,
+                          letterSpacing: -0.5,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
