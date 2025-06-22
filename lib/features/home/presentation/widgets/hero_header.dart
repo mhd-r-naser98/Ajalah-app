@@ -1,3 +1,4 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
 import 'package:ajalah/core/utils/responsive_spacer.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,7 @@ class HeroHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
     return Stack(
       clipBehavior: Clip.antiAlias,
       alignment: Alignment.topCenter,
@@ -20,7 +22,7 @@ class HeroHeader extends StatelessWidget {
               const ResponsiveSpacer(size: SpacerSize.large),
 
               Text(
-                'Drive Deals, \nSell Fast',
+                '${t("driveDeals")} \n${t("sellFase")}',
                 textAlign: TextAlign.center,
 
                 style: TextStyle(

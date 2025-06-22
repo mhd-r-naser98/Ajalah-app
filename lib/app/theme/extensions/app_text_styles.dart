@@ -94,7 +94,7 @@ class AppTextStyles extends ThemeExtension<AppTextStyles> {
     );
   }
 
-  static const _lineHeight = 1.2;
+  static const _lineHeight = 1.20;
   static const _fontFamily = 'Cairo';
   static const _defaultColor = Color(0xFF2A3950);
   static const _accentColor = Color(0xFF02C0AA);

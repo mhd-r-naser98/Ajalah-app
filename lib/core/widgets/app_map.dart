@@ -56,6 +56,8 @@ class _MapPickerFieldState extends State<MapPickerField> {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
+
     return ReactiveFormField<LatLng, LatLng>(
       formControlName: widget.config.name,
       builder: (field) {
@@ -93,8 +95,8 @@ class _MapPickerFieldState extends State<MapPickerField> {
                     Expanded(
                       child: Text(
                         selectedPosition == null
-                            ? "Choose from map"
-                            : "تم اختيار الموقع ",
+                            ? t('ChooseFromMap')
+                            : t('SiteSelected'),
                         style: TextStyle(
                           fontSize: 14,
                           color: context.colors.grey[700]!,

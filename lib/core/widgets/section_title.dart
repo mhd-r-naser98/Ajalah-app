@@ -23,8 +23,9 @@ class SectionTitle extends StatelessWidget {
         CustomLinkText(
           child: Row(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('View more deals'),
+              Text(actionText),
               SizedBox(width: 4),
               Icon(
                 Icons.arrow_forward_sharp,

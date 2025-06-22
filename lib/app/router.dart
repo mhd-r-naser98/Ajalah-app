@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../core/di/service_locator.dart';
 import '../core/services/storage_service.dart';
@@ -15,7 +14,6 @@ import '../features/compare/compare_screen.dart';
 import '../features/global/about/about_screen.dart';
 import '../features/global/privacy/privacy_screen.dart';
 import '../features/global/terms/terms_screen.dart';
-import '../features/home/logic/home_cubit.dart';
 import '../features/home/presentation/widgets/home_body.dart';
 import '../features/carListing/imported/imported_screen.dart';
 import '../features/account/sell/sell_screen.dart';
@@ -68,10 +66,7 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.home,
             name: 'home',
-            builder: (context, state) => BlocProvider(
-              create: (_) => HomeCubit()..fetchCars(),
-              child: const HomeBody(),
-            ),
+            builder: (context, state) => const HomeBody(),
           ),
           GoRoute(
             path: AppRoutes.used,

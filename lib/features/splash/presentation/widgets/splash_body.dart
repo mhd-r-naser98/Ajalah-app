@@ -53,6 +53,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
     return BlocListener<SplashCubit, SplashStatus>(
       listener: (context, state) {
         if (state == SplashStatus.loaded) {
@@ -79,7 +80,7 @@ class _SplashBodyState extends State<SplashBody> with TickerProviderStateMixin {
             FadeTransition(
               opacity: fadingAni,
               child: Text(
-                'ajalah',
+                t('ajalah'),
                 style: context.textStyles.styles.displaySmall,
               ),
             ),

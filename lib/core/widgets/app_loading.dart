@@ -39,6 +39,8 @@ class _LoadingWidgetState extends State<LoadingWidget>
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
+
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -56,7 +58,7 @@ class _LoadingWidgetState extends State<LoadingWidget>
           FadeTransition(
             opacity: fadingAni,
             child: Text(
-              'ajalah',
+              t('ajalah'),
               style: context.textStyles.styles.displaySmall,
             ),
           ),

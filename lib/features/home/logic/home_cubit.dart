@@ -1,49 +1,66 @@
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'home_state.dart';
+import 'package:ajalah/core/di/service_locator.dart';
+import 'package:ajalah/features/home/data/home_repo.dart';
+import 'package:ajalah/shared/models/brand_model.dart';
+import 'package:ajalah/shared/models/car_card_model.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-// class HomeCubit extends Cubit<HomeState> {
-//   HomeCubit() : super(HomeInitial());
-
-//   Future<void> fetchCars() async {
-//     emit(HomeLoading());
-//     try {
-//       await Future.delayed(const Duration(seconds: 1));
-
-//       emit(HomeLoaded());
-//     } catch (e) {
-//       emit(HomeFailure(error: e.toString()));
-//     }
-//   }
-// }
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
+  HomeRepository repository = locator<HomeRepository>();
+  List<CarCardItem>? newCars;
+  // final List<CarCardItem> rentCars;
+  List<CarCardItem>? importCars;
+  List<CarCardItem>? popularCars;
+  List<BrandModel>? brands;
   HomeCubit() : super(HomeInitial());
 
-  List<dynamic>? _cachedCars; // كاش للسيارات
-
-  Future<void> fetchCars({bool forceRefresh = false}) async {
-    // إذا كانت البيانات موجودة في الكاش ولم يُطلب تحديث إجباري، استخدم الكاش
-    if (_cachedCars != null && !forceRefresh) {
-      emit(HomeLoaded(cars: _cachedCars!));
-      return;
-    }
-
+  Future<void> fetchHomeData() async {
     emit(HomeLoading());
-    try {
-      // هنا ضع منطق جلب البيانات الحقيقي من API أو قاعدة بيانات
-      await Future.delayed(const Duration(seconds: 1));
-      final cars = <dynamic>[]; // استبدلها بالبيانات الحقيقية
 
-      _cachedCars = cars; // حفظ في الكاش
-      emit(HomeLoaded(cars: cars));
+    try {
+      newCars = await repository.fetchNewCars();
+      importCars = await repository.fetchimportedCars();
+      popularCars = await repository.fetchLatestCars();
+      brands = await repository.fetchbrands();
+
+      emit(
+        HomeInitial(
+          newCars: newCars,
+          // rentCars: rentCars,
+          importCars: importCars,
+          popularCars: popularCars,
+          brands: brands,
+        ),
+      );
+      emit(HomeLoaded());
     } catch (e) {
-      emit(HomeFailure(error: 'حدث خطأ أثناء تحميل السيارات: ${e.toString()}'));
+      emit(HomeFailure(error: e.toString()));
     }
   }
 
-  void clearCache() {
-    _cachedCars = null;
+  Future<CarCardItem> handleSave(String id, String ownerRole) async {
+    try {
+      final saveRes = await repository.handleSave(id, ownerRole);
+
+      return saveRes;
+    } catch (e) {
+      emit(HomeFailure(error: e.toString()));
+      throw Exception(e.toString());
+    }
+  }
+
+  Future<CarCardItem> handleUnSave(
+    String? savedVehicleId,
+    String? ownerRole,
+  ) async {
+    try {
+      final saveRes = await repository.handleUnSave(savedVehicleId, ownerRole);
+
+      return saveRes;
+    } catch (e) {
+      emit(HomeFailure(error: e.toString()));
+      throw Exception(e.toString());
+    }
   }
 }

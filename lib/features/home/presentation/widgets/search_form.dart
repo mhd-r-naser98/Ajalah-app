@@ -35,7 +35,7 @@ class SearchForm extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Find your special car',
+                t('findYourCar'),
                 style: context.textStyles.styles.titleLarge.copyWith(
                   fontWeight: FontWeight.normal,
                   height: 1.2,
@@ -248,14 +248,14 @@ class SearchForm extends StatelessWidget {
                 ),
                 onPressed: () {},
                 icon: const Icon(Icons.search),
-                label: const Text('Search'),
+                label: Text(t('Search')),
               ),
               const ResponsiveSpacer(size: SpacerSize.medium),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomLinkText(
-                    text: 'Reset filters',
+                    text: t('resetFilters'),
                     onTap: () {},
                     style: context.textStyles.styles.bodyLarge.copyWith(
                       color: context.colors.secondary.main,
@@ -263,7 +263,7 @@ class SearchForm extends StatelessWidget {
                     ),
                   ),
                   CustomLinkText(
-                    text: 'Advanced filter',
+                    text: t('advancedFilter'),
                     onTap: () {},
                     style: context.textStyles.styles.bodyLarge.copyWith(
                       color: context.colors.secondary.main,

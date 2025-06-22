@@ -43,10 +43,11 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
   Future<void> _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
+    final t = context.t;
 
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      AppSnackBar.error(context, 'يرجى تفعيل خدمة الموقع');
+      AppSnackBar.error(context, t('EnableLocationService'));
 
       return;
     }
@@ -55,17 +56,14 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        AppSnackBar.error(context, 'تم رفض صلاحية الموقع');
+        AppSnackBar.error(context, t('SiteAccessDenied'));
 
         return;
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
-      AppSnackBar.error(
-        context,
-        'تم رفض صلاحية الموقع نهائياً، الرجاء تغيير الإعدادات',
-      );
+      AppSnackBar.error(context, t('SiteDenied'));
 
       return;
     }
@@ -80,18 +78,19 @@ class _MapPickerScreenState extends State<MapPickerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("اختر الموقع على الخريطة"),
+        title: Text(t('SelectFromMap')),
         actions: [
           IconButton(
             icon: const Icon(Icons.my_location),
-            tooltip: 'Select my Location',
+            tooltip: t('SelectMyLocation'),
             onPressed: _determinePosition,
           ),
           IconButton(
             icon: const Icon(Icons.save),
-            tooltip: 'Save',
+            tooltip: t('Save'),
             onPressed: _onConfirm,
           ),
         ],

@@ -1,40 +1,48 @@
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/config/router.dart';
 import 'package:ajalah/core/utils/responsive_spacer.dart';
 import 'package:ajalah/core/widgets/car_card.dart';
 import 'package:ajalah/core/widgets/section_title.dart';
+import 'package:ajalah/shared/models/car_card_model.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CarRentDeals extends StatelessWidget {
-  const CarRentDeals({super.key});
+  final List<CarCardItem> cars;
+
+  const CarRentDeals({super.key, required this.cars});
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unnecessary_null_comparison
+    final filteredItems = cars.where((e) => e != null).toList();
+    final t = context.t;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SectionTitle(
-          actionText: 'View more deals',
-          onTap: () {},
-          title: 'Car Rent Deals',
+          actionText: t('moreDeals'),
+          onTap: () {
+            context.push(AppRoutes.rent);
+          },
+          title: t('RentDeals'),
         ),
         const ResponsiveSpacer(size: SpacerSize.medium),
         SizedBox(
-          height: 425,
+          height: 430,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemCount: 5,
+            itemCount: cars.length,
             separatorBuilder: (_, __) => const ResponsiveSpacer(
               axis: Axis.horizontal,
               size: SpacerSize.medium,
             ),
 
-            itemBuilder: (context, index) => CarCard(
-              width: 300,
-              imageUrls: [
-                'assets/imgs/car_sample.webp',
-                'https://picsum.photos/id/237/200/300',
-                "assets/imgs/car_sample.webp",
-              ],
-            ),
+            itemBuilder: (context, index) {
+              final car = filteredItems[index];
+              return CarCard(width: 300, item: car, imageUrls: car.gallery);
+            },
           ),
         ),
       ],

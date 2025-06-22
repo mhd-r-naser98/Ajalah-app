@@ -1,10 +1,8 @@
-import 'dart:io';
 import 'dart:ui';
-
+import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/widgets/lazy_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import '../../app/theme/extensions/theme_extensions.dart';
 
 class CarImageSlider extends StatefulWidget {
   final List<dynamic> images;
@@ -52,7 +50,7 @@ class _CarImageSliderState extends State<CarImageSlider> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  _buildImage(widget.images[index], isBlurred: true),
+                  LazyImage(image: widget.images[index]),
                   Positioned.fill(
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
@@ -61,31 +59,13 @@ class _CarImageSliderState extends State<CarImageSlider> {
                       ),
                     ),
                   ),
-                  _buildImage(widget.images[index]),
+                  LazyImage(image: widget.images[index]),
                 ],
               ),
             );
           },
         ),
 
-        if (widget.images.length > 1) ...[
-          Positioned(
-            top: widget.height / 2 - 20,
-            left: 8,
-            child: _navButton(
-              Icons.arrow_back_ios_sharp,
-              _controller.previousPage,
-            ),
-          ),
-          Positioned(
-            top: widget.height / 2 - 20,
-            right: 8,
-            child: _navButton(
-              Icons.arrow_forward_ios_sharp,
-              _controller.nextPage,
-            ),
-          ),
-        ],
         if (widget.images.length > 1)
           Positioned(
             bottom: 10,
@@ -103,7 +83,7 @@ class _CarImageSliderState extends State<CarImageSlider> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _current == entry.key
-                          ? Colors.white
+                          ? context.colors.primary.main
                           : Colors.white.withAlpha((0.4 * 255).round()),
                     ),
                   ),
@@ -113,61 +93,5 @@ class _CarImageSliderState extends State<CarImageSlider> {
           ),
       ],
     );
-  }
-
-  Widget _navButton(IconData icon, VoidCallback onTap) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: 40,
-        height: 40,
-        decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-        child: Center(
-          child: Icon(icon, size: 16, color: context.colors.secondary.main),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildImage(dynamic image, {bool isBlurred = false}) {
-    final blendColor = Colors.black.withAlpha((0.4 * 255).round());
-    final blendMode = BlendMode.darken;
-
-    if (image is String &&
-        (image.startsWith('http') || image.startsWith('https'))) {
-      return CachedNetworkImage(
-        imageUrl: image,
-        fit: BoxFit.cover,
-        color: blendColor,
-        colorBlendMode: blendMode,
-        placeholder: (context, url) =>
-            const Center(child: CircularProgressIndicator()),
-        errorWidget: (context, url, error) => const Icon(Icons.error),
-      );
-    } else if (image is String) {
-      // Asset Image
-      return Image.asset(
-        image,
-        fit: BoxFit.cover,
-        color: blendColor,
-        colorBlendMode: blendMode,
-      );
-    } else if (image is File) {
-      return Image.file(
-        image,
-        fit: BoxFit.cover,
-        color: blendColor,
-        colorBlendMode: blendMode,
-      );
-    } else if (image is ImageProvider) {
-      return Image(
-        image: image,
-        fit: BoxFit.cover,
-        color: blendColor,
-        colorBlendMode: blendMode,
-      );
-    } else {
-      return const Center(child: Icon(Icons.broken_image));
-    }
   }
 }

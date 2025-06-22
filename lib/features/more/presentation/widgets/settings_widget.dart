@@ -38,7 +38,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(t('Settings'), style: textStyle.titleLarge),
-              const ResponsiveSpacer(size: SpacerSize.medium),
+              const ResponsiveSpacer(size: SpacerSize.large),
               GridView.count(
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,

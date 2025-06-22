@@ -1,13 +1,17 @@
 import 'package:ajalah/app/theme/extensions/theme_extensions.dart';
+import 'package:ajalah/core/config/router.dart';
 import 'package:ajalah/core/utils/responsive_spacer.dart';
 import 'package:ajalah/core/widgets/app_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SellYourCarBanner extends StatelessWidget {
   const SellYourCarBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final t = context.t;
+
     return Container(
       width: double.infinity,
       height: 170.0,
@@ -29,7 +33,7 @@ class SellYourCarBanner extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "You're in control, \nchoose how you \nwant to sell your car.",
+              "${t('YouControl')}, \n${t("chooseHow")} \n${t('wantSell')}.",
               style: context.textStyles.styles.titleSmall.copyWith(
                 color: Colors.white,
                 height: 1.2,
@@ -39,8 +43,10 @@ class SellYourCarBanner extends StatelessWidget {
             SizedBox(
               width: 160,
               child: CustomButton(
-                text: 'Sell your car',
-                onTap: () {},
+                text: t('SellCar'),
+                onTap: () {
+                  context.push(AppRoutes.sell);
+                },
                 height: 40,
                 textStyle: TextStyle(
                   color: Colors.white,

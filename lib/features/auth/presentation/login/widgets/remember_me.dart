@@ -20,8 +20,7 @@ class RememberMeCheckbox extends StatelessWidget {
       children: [
         Expanded(
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 width: 26,

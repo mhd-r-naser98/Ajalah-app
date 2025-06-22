@@ -1,3 +1,4 @@
+import 'package:ajalah/features/home/data/home_repo.dart';
 import 'package:get_it/get_it.dart';
 import '../../core/network/api_provider.dart';
 import '../../core/services/storage_service.dart';
@@ -16,6 +17,12 @@ Future<void> setupCoreServices(SecureStorageService storageService) async {
 Future<void> setupRepositories() async {
   locator.registerSingleton<AuthRepository>(
     AuthRepository(
+      apiProvider: locator<ApiProvider>(),
+      storageService: locator<StorageService>(),
+    ),
+  );
+  locator.registerSingleton<HomeRepository>(
+    HomeRepository(
       apiProvider: locator<ApiProvider>(),
       storageService: locator<StorageService>(),
     ),
